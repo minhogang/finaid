@@ -14,6 +14,7 @@ class App extends Component {
 					name="viewport"
 					content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
 				/>
+				<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"></link>
 			</Helmet>
 
 			<Button variant="contained" color="primary">
