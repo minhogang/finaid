@@ -1,14 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import express_graphql from 'express-graphql';
-import { buildSchema } from 'graphql';
 let app = express();
-
-var schema = buildSchema(`
-    type Query {
-        message: String
-    }
-`)
+/* Body Parser extracts the body portion of an incoming request and exposes it 
+on req.body */
+app.use(bodyParser.json()); //support parsing of application/json type post data
+bodyParser.urlencoded({extended: true}); //support parsing of application/x-www-form-urlencoded post data
 
 app.get('/', (req, res, next) => {
     res.send("Hello from default route");
