@@ -1,9 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import express_graphql from 'express-graphql';
+import { buildSchema } from 'graphql';
 let app = express();
-//bodyParser middleware for express
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}))
+
+var schema = buildSchema(`
+    type Query {
+        message: String
+    }
+`)
 
 app.get('/', (req, res, next) => {
     res.send("Hello from default route");

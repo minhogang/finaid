@@ -36,6 +36,7 @@ class Main extends Component {
                 </Button> 
                 &nbsp;
                 <div>Current Value in Redux Store: <span>{this.props.currentValue}</span></div>
+                
             </div>
         )
     }
