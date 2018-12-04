@@ -7,6 +7,7 @@ import * as actions from '../store/actions/actions'
 import { Button, Input} from '@material-ui/core'
 
 class Main extends Component {
+    //The state exclusive to this component
     state = {
         inputValue: 0
     }
@@ -39,17 +40,19 @@ class Main extends Component {
         )
     }
 }
-
+/* mapStateToProps and mapDispatchToProps are exclusive functions of redux */
+/* We can access the state in the reducer.js */
 const mapStateToProps = state => {
     return {
         currentValue: state.default_value
     }
 }
 
+/* We can dispatch actions to the reducer with actions from actions.js */
 const mapDispatchToProps = dispatch => {
     return {
         addValue: (value) => dispatch(actions.addValue(value))
     }
 }
-
+//connect() the component to redux, and withRouter() allows routing
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

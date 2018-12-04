@@ -5,11 +5,11 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from "react-redux";
 import { createStore } from 'redux';
-import reducer from "./store/reducers/reducer";
-const store = createStore(reducer);
+import reducer from "./store/reducers/reducer"; //import the redux reducer
+const store = createStore(reducer); //create the store
 
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={store}> 
         <BrowserRouter>
             <App />
         </BrowserRouter>

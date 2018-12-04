@@ -16,6 +16,7 @@ class App extends Component {
 		)
     	return (
 		<div>
+			{/* Helmet tag is for head code */}
 			<Helmet>
 				<title>Financial Aid Calculator</title>
 				<meta
