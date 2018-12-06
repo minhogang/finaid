@@ -47,7 +47,7 @@ class Main extends Component {
                 <Button variant="contained" color="secondary" onClick={this.sendAPIRequest}>
                     Click to send request to express server: http://localhost:3000/api/test
                 </Button>
-                <div>JSON Response from Express API: {this.state.randomNumber}</div>
+                <div>JSON Random Number response from Express API: {this.state.randomNumber}</div>
             </div>
         )
     }
