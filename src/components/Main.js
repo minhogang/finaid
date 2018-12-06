@@ -9,7 +9,8 @@ import { Button, Input} from '@material-ui/core'
 class Main extends Component {
     //The state exclusive to this component
     state = {
-        inputValue: 0
+        inputValue: 0,
+        randomNumber: 0
     }
 
     handleChange = (value) => {
@@ -18,6 +19,12 @@ class Main extends Component {
 
     handleClick = (event) => {
         this.props.addValue(this.state.inputValue)
+    }
+
+    sendAPIRequest = (event) => {
+        fetch("/api/test")
+            .then((response) => {return response.json()})
+            .then((response) => this.setState({randomNumber: response["randomNumber"]}))
     }
     render() {
         return (
@@ -36,7 +43,11 @@ class Main extends Component {
                 </Button> 
                 &nbsp;
                 <div>Current Value in Redux Store: <span>{this.props.currentValue}</span></div>
-                
+                &nbsp;
+                <Button variant="contained" color="secondary" onClick={this.sendAPIRequest}>
+                    Click to send request to express server: http://localhost:3000/api/test
+                </Button>
+                <div>JSON Response from Express API: {this.state.randomNumber}</div>
             </div>
         )
     }
