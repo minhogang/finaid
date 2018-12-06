@@ -6,8 +6,8 @@ on req.body */
 app.use(bodyParser.json()); //support parsing of application/json type post data
 bodyParser.urlencoded({extended: true}); //support parsing of application/x-www-form-urlencoded post data
 
-app.get('/', (req, res, next) => {
-    res.send("Hello from default route");
+app.get('/api/test', (req, res, next) => {
+    res.send("Hello from testing api");
 })
 
 app.listen(3000, () => {
