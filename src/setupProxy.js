@@ -1,5 +1,5 @@
 /* This file is to proxy the React fetch() requests to the 
-Express server running on port 3000. DO NOT RENAME THIS FILE */
+Express server running on port 3000. DO NOT RENAME OR MOVE THIS FILE */
 
 const proxy = require('http-proxy-middleware');
 module.exports = (app) => {
