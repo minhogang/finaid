@@ -9,6 +9,7 @@ class App extends Component {
 
   	render() {
 		let routes = (
+			/* Wrap routes in react-router Switch tags to make sure only one route is rendered at once */
 			<Switch>
 				<Route exact path="/" component={Main} />
 				<Route exact path="/scholarships" component={Scholarships} />
@@ -16,7 +17,7 @@ class App extends Component {
 		)
     	return (
 		<div>
-			{/* Helmet tag is for head code */}
+			{/* Helmet tag is for header data */}
 			<Helmet>
 				<title>Financial Aid Calculator</title>
 				<meta
@@ -25,7 +26,7 @@ class App extends Component {
 				/>
 				<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"></link>
 			</Helmet>
-			{routes}
+			{routes} {/* Render the routes */}
 		</div>
     	);
   	}
